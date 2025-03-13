@@ -6,20 +6,20 @@ public class PasswordMaker
     private static final int MAGIC_NUMBER = new Random().nextInt(6) + 5;
     private final String magicString;
     private final String name;
-    private static PasswordMaker instance;
+    private static final PasswordMaker instance;
 
+    static
+    {
+        instance = new PasswordMaker("Default User");
+    }
     public PasswordMaker(String name)
     {
         this.name = name;
         this.magicString = StringRandomizer.generateRandomString(20);
     }
 
-    public static PasswordMaker getInstance(String name)
+    public static PasswordMaker getInstance()
     {
-        if(instance == null)
-        {
-            instance = new PasswordMaker(name);
-        }
         return instance;
     }
     public String getPassword()

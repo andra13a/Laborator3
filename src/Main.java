@@ -8,7 +8,9 @@ public class Main
         PasswordMaker pm2 = PasswordMaker.getInstance();
         PasswordMaker pm3 = PasswordMaker.getInstance();
 
+
         System.out.println("Parola generata este : " + pm1.getPassword());
+
         System.out.println("getInstance() called: " + PasswordMaker.getInstanceCounter() + " times");
     }
 }

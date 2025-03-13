@@ -7,7 +7,8 @@ public class PasswordMaker
     private final String magicString;
     private final String name;
     private static final PasswordMaker instance;
-    private static int instanceCounter = 0; //Contorul trebuie sa fie static!!!!
+    private static int instanceCounter = 0;// contorul trebuie sa fie static
+
 
     static
     {
@@ -30,6 +31,7 @@ public class PasswordMaker
     {
         return instanceCounter;
     }
+
     public String getPassword()
     {
         Random random = new Random();

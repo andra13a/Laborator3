@@ -7,11 +7,13 @@ public class PasswordMaker
     private final String magicString;
     private final String name;
     private static final PasswordMaker instance;
+    private static int instanceCounter = 0; //Contorul trebuie sa fie static!!!!
 
     static
     {
         instance = new PasswordMaker("Default User");
     }
+
     public PasswordMaker(String name)
     {
         this.name = name;
@@ -20,7 +22,13 @@ public class PasswordMaker
 
     public static PasswordMaker getInstance()
     {
+        instanceCounter++;
         return instance;
+    }
+
+    public static int getInstanceCounter()
+    {
+        return instanceCounter;
     }
     public String getPassword()
     {
